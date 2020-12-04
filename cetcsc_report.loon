@@ -1,0 +1,8 @@
+# 网安平台每日健康填报
+
+http-request ^http:\/\/(www\.)?magic\.js\/value\/(write|read|del) script-path=https://raw.githubusercontent.com/codetracer/ios_rule_script/master/script/magicjs/magic.js, requires-body=true, timeout=10, tag=MagicJS_变量维护
+http-request ^https:\/\/overall\.westonecloud\.com\/.*\/report\/?$ script-path=https://raw.githubusercontent.com/codetracer/chons/master/cetcsc_report.js, requires-body=true, timeout=10, tag=抗疫_网安获取填报内容
+http-response ^https:\/\/overall\.westonecloud\.com\/.*\/sign\/?$ script-path=https://raw.githubusercontent.com/codetracer/chons/master/cetcsc_report.js, requires-body=true, timeout=10, tag=抗疫_网安登录获取token
+cron "0 0 * * *" script-path=https://raw.githubusercontent.com/codetracer/chons/master/cetcsc_report.js,tag=抗疫_网安健康填报
+
+hostname = overall.westonecloud.com

@@ -1,0 +1,10 @@
+# 电科健康填报
+# task_local 增加一条定时任务
+# [task_local]
+# 5 0 * * * https://raw.githubusercontent.com/codetracer/chons/master/cetc_report.js, tag=抗疫_电科健康填报, enabled=true
+
+^https:\/\/asst\.cetccloud\.com\/oort\/.*2019.*\/(edit_)?everyday_report url script-request-body https://raw.githubusercontent.com/codetracer/chons/master/cetc_report.js
+^https:\/\/asst\.cetccloud\.com\/ncov\/login$ url script-request-body https://raw.githubusercontent.com/codetracer/chons/master/cetc_report.js
+^http:\/\/(www\.)?magic\.js\/value\/(write|read|del) url script-echo-response https://raw.githubusercontent.com/codetracer/ios_rule_script/master/script/magicjs/magic.js
+
+hostname = asst.cetccloud.com,captcha.cetccloud.com

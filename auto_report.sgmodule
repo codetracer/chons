@@ -1,0 +1,15 @@
+#!name=每日健康填报
+#!desc=每日自动填报网安和电科平台的健康数据
+#!system=ios
+
+[Script]
+抗疫_网安自动填报 = type=cron,cronexp=0 0 * * *,timeout=120,wake-system=1,script-path=https://raw.githubusercontent.com/codetracer/chons/master/cetcsc_report.js
+抗疫_电科自动填报 = type=cron,cronexp=0 0 * * *,timeout=120,wake-system=1,script-path=https://raw.githubusercontent.com/codetracer/chons/master/cetc_report.js
+抗疫_网安登录获取Token = type=http-response,requires-body=true,max-size=0,pattern=^https:\/\/overall\.westonecloud\.com\/.*\/sign\/?$,script-path=https://raw.githubusercontent.com/codetracer/chons/master/cetcsc_report.js
+抗疫_网安获取填报内容 = type=http-request,requires-body=true,max-size=0,pattern=^https:\/\/overall\.westonecloud\.com\/.*\/report\/?$,script-path=https://raw.githubusercontent.com/codetracer/chons/master/cetcsc_report.js
+抗疫_电科登录获取Token = type=http-request,requires-body=true,max-size=0,pattern=^https:\/\/asst\.cetccloud\.com\/ncov\/login$,script-path=https://raw.githubusercontent.com/codetracer/chons/master/cetc_report.js
+抗疫_电科填报获取内容 = type=http-request,requires-body=true,max-size=0,pattern=^https:\/\/asst\.cetccloud\.com\/oort\/.*2019.*\/(edit_)?everyday_report,script-path=https://raw.githubusercontent.com/codetracer/chons/master/cetc_report.js
+MagicJS_变量维护 = type=http-request,requires-body=1,max-size=0,pattern=^http:\/\/(www\.)?magic\.js\/value\/(write|read|del),script-path=https://raw.githubusercontent.com/codetracer/ios_rule_script/master/script/magicjs/magic.js
+
+[MITM]
+hostname = %APPEND% overall.westonecloud.com,asst.cetccloud.com,captcha.cetccloud.com

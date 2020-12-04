@@ -1,0 +1,13 @@
+# 每日健康填报
+# task_local 增加两条定时任务
+# [task_local]
+# 0 0 * * * https://raw.githubusercontent.com/codetracer/chons/master/cetcsc_report.js, tag=抗疫_网安健康填报, enabled=true
+# 5 0 * * * https://raw.githubusercontent.com/codetracer/chons/master/cetc_report.js, tag=抗疫_电科健康填报, enabled=true
+
+^https:\/\/overall\.westonecloud\.com\/.*\/sign\/?$ url script-response-body https://raw.githubusercontent.com/codetracer/chons/master/cetcsc_report.js
+^https:\/\/overall\.westonecloud\.com\/.*\/report\/?$ url script-request-body https://raw.githubusercontent.com/codetracer/chons/master/cetcsc_report.js
+^https:\/\/asst\.cetccloud\.com\/oort\/.*2019.*\/(edit_)?everyday_report url script-request-body https://raw.githubusercontent.com/codetracer/chons/master/cetc_report.js
+^https:\/\/asst\.cetccloud\.com\/ncov\/login$ url script-request-body https://raw.githubusercontent.com/codetracer/chons/master/cetc_report.js
+^http:\/\/(www\.)?magic\.js\/value\/(write|read|del) url script-echo-response https://raw.githubusercontent.com/codetracer/ios_rule_script/master/script/magicjs/magic.js
+
+hostname = overall.westonecloud.com,asst.cetccloud.com,captcha.cetccloud.com
