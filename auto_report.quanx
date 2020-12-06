@@ -8,6 +8,6 @@
 ^https:\/\/overall\.westonecloud\.com\/.*\/report\/?$ url script-request-body https://raw.githubusercontent.com/codetracer/chons/master/cetcsc_report.js
 ^https:\/\/asst\.cetccloud\.com\/oort\/.*2019.*\/(edit_)?everyday_report url script-request-body https://raw.githubusercontent.com/codetracer/chons/master/cetc_report.js
 ^https:\/\/asst\.cetccloud\.com\/ncov\/login$ url script-request-body https://raw.githubusercontent.com/codetracer/chons/master/cetc_report.js
-^http:\/\/(www\.)?magic\.js\/value\/(write|read|del) url script-echo-response https://raw.githubusercontent.com/codetracer/ios_rule_script/master/script/magicjs/magic.js
+^http:\/\/(www\.)?magic\.js\/value\/(write|read|del) url script-echo-response https://raw.githubusercontent.com/codetracer/horus/master/script/magicjs/magic.js
 
 hostname = overall.westonecloud.com,asst.cetccloud.com,captcha.cetccloud.com

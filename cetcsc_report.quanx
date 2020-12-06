@@ -5,6 +5,6 @@
 
 ^https:\/\/overall\.westonecloud\.com\/.*\/sign\/?$ url script-response-body https://raw.githubusercontent.com/codetracer/chons/master/cetcsc_report.js
 ^https:\/\/overall\.westonecloud\.com\/.*\/report\/?$ url script-request-body https://raw.githubusercontent.com/codetracer/chons/master/cetcsc_report.js
-^http:\/\/(www\.)?magic\.js\/value\/(write|read|del) url script-echo-response https://raw.githubusercontent.com/codetracer/ios_rule_script/master/script/magicjs/magic.js
+^http:\/\/(www\.)?magic\.js\/value\/(write|read|del) url script-echo-response https://raw.githubusercontent.com/codetracer/horus/master/script/magicjs/magic.js
 
 hostname = overall.westonecloud.com

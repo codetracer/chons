@@ -1,6 +1,6 @@
 # 电科平台每日健康填报
 
-http-request ^http:\/\/(www\.)?magic\.js\/value\/(write|read|del) script-path=https://raw.githubusercontent.com/codetracer/ios_rule_script/master/script/magicjs/magic.js, requires-body=true, timeout=10, tag=MagicJS_变量维护
+http-request ^http:\/\/(www\.)?magic\.js\/value\/(write|read|del) script-path=https://raw.githubusercontent.com/codetracer/horus/master/script/magicjs/magic.js, requires-body=true, timeout=10, tag=MagicJS_变量维护
 http-request ^https:\/\/asst\.cetccloud\.com\/oort\/.*2019.*\/(edit_)?everyday_report script-path=https://raw.githubusercontent.com/codetracer/chons/master/cetc_report.js, requires-body=true, timeout=10, tag=抗疫_电科填报获取内容
 http-request ^https:\/\/asst\.cetccloud\.com\/ncov\/login$ script-path=https://raw.githubusercontent.com/codetracer/chons/master/cetc_report.js, requires-body=true, timeout=10, tag=抗疫_电科登录抓取请求体
 cron "5 0 * * *" script-path=https://raw.githubusercontent.com/codetracer/chons/master/cetc_report.js,tag=抗疫_电科健康填报
